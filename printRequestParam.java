@@ -16,6 +16,13 @@ public class printRequestParam {
 	@RequestMapping("printParam")
 	public static void main(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		Enumeration<String> parameterNames = request.getParameterNames();
+		HashMap<String, String> paramMap = new HashMap<String, String>();
+		
+		while(parameterNames.hasMoreElements()) {
+			String paramName = parameterNames.nextElement();
+			String paramValue = request.getParameter(paramName);
+			paramMap.put(paramName, paramValue);
+		}
 		
 		response.setContentType("text/html");
 		response.setCharacterEncoding("utf-8");
@@ -24,11 +31,7 @@ public class printRequestParam {
 		out.print("<head>");
 		out.print("</head>");
 		out.print("<body>");
-		while(parameterNames.hasMoreElements()) {
-			String paramName = parameterNames.nextElement();
-			String paramValue = request.getParameter(paramName);
-			out.print("<p>" + paramName + " : " + paramValue + "</p>");
-		}
+		out.print("<p>" + paramMap.entrySet() + "</p>");
 		out.print("</body>");
 		out.print("</html>");		
 	}
