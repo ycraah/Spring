@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 class YoilTeller{
-	@RequestMapping("/date")
+	@RequestMapping("/yoil")
 	public String main(int year, int month, int day, Model model) throws IOException {
 		//유효성 검사
 		if(!isValid(year,month,day)) {
