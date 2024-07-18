@@ -9,6 +9,6 @@
 <title>요일 출력기</title>
 </head>
 <body>
-	<p>${year}년 ${month}월 ${day}일의 요일은 ${yoil}입니다.</p>
+	<p>${year}년 ${month}월 ${day}일은 ${yoil}요일입니다.</p>
 </body>
 </html>
