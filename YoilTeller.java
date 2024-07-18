@@ -37,6 +37,7 @@ public class YoilTeller {
 	}
 
 	private boolean isValid(int year, int month, int day) {
-		return true;
+		if(0<year && 1<=month && month<=12 && 1<=day && day<=31) return true;
+		else return false;
 	}
 }
