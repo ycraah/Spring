@@ -33,8 +33,7 @@ public class YoilTeller {
 		Calendar cal = Calendar.getInstance();
 		cal.set(year, month-1, day);
 		int yoilNum = cal.get(Calendar.DAY_OF_WEEK);
-		char[] yoilArr = {' ', '일', '월', '화', '수', '목', '금', '토'};
-		return yoilArr[yoilNum];
+		return " 일월화수목금토일".charAt(yoilNum);
 	}
 
 	private boolean isValid(int year, int month, int day) {
