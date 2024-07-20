@@ -20,20 +20,19 @@ public class YoilTellerModelAtt {
 	}
 	
 	@RequestMapping("/yoil")
-	public String main(MyDate date, Model m) {
+	public String main(@ModelAttribute MyDate date) {
 		//유효성 검사
 		if(!isValid(date)) {
 			return "errorPage";
 		}
 		//요일 확인
 		char yoil = getYoil(date);
-		//Model에 작업 저장
-		m.addAttribute("yoil", yoil);
+
 		//출력
 		return "dayOfWeek";
 	}
 	
-	private char getYoil(MyDate date) {
+	private @ModelAttribute("yoil") char getYoil(MyDate date) {
 		return getYoil(date.getYear(), date.getMonth(), date.getDay());
 	}
 	
